@@ -1,0 +1,5 @@
+.idea
+.jupyter
+.vscode
+__pycache__
+anaconda_projects

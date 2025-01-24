@@ -1,0 +1,16 @@
+arithmetical-tuition-api/.git
+arithmetical-tuition-api/.gitignore
+arithmetical-tuition-api/.idea
+arithmetical-tuition-api/.jupyter
+arithmetical-tuition-api/__pycache__
+arithmetical-tuition-api/__tests__
+arithmetical-tuition-api/anaconda_projects
+arithmetical-tuition-api/*.ipynb
+
+arithmetical-tuition-ui/..dockerignore
+arithmetical-tuition-ui/.editorconfig
+arithmetical-tuition-ui/.git
+arithmetical-tuition-ui/.gitignore
+arithmetical-tuition-ui/.prettierrc.json
+arithmetical-tuition-ui/.vscode
+arithmetical-tuition-ui/node_modules

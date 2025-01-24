@@ -1,0 +1,8 @@
+.git
+.gitignore
+.idea
+.jupyter
+__pycache__
+__tests__
+anaconda_projects
+*.ipynb
