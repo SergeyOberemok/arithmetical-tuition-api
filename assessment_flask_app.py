@@ -30,18 +30,6 @@ def handle_start(quantity: int):
     assessment, assessmentIterator = start_assessment(quantity)
 
 
-@socketio.on('objective')
-def handle_objective(args):
-    return assessmentItem.goal
-
-
-@socketio.on('assess')
-def handle_assess(answer: str):
-    result = assessmentItem.pipe(lambda item: item.setAnswer(lambda: int(answer))).assess()
-
-    return result
-
-
 @socketio.on('question')
 def handle_question(args):
     global assessmentItem
@@ -49,10 +37,17 @@ def handle_question(args):
     try:
         assessmentItem = next(assessmentIterator)
 
-        return str(assessmentItem)
+        return str(assessmentItem), assessmentItem.goal
     except StopIteration:
-        emit('end', {'assessment': str(assessment), 'results': assessment.results, 'result': assessment.result})
+        emit('end', {'assessment': str(assessment), 'results': assessment.results, 'isPassed': assessment.result})
         return ''
+
+
+@socketio.on('answer')
+def handle_answer(answer: int):
+    result = assessmentItem.pipe(lambda item: item.setAnswer(lambda: answer)).assess()
+
+    return result
 
 
 @app.route('/')
